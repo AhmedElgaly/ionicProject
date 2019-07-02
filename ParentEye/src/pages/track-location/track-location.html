@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>track_location</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <agm-map [latitude]=" trackLocation.latitude" [longitude]="trackLocation.longitude"
+    [zoom]="15"
+    >
+  <agm-marker 
+  [latitude]="trackLocation.latitude" [longitude]="trackLocation.longitude">
+  
+  </agm-marker>
+    </agm-map>
+
+</ion-content>

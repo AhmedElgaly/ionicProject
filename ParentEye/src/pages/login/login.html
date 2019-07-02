@@ -1,0 +1,32 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+		<ion-list>
+
+				<ion-item>
+				  <ion-label fixed>Email</ion-label>
+				  <ion-input type="text" [(ngModel)]="email"></ion-input>
+				</ion-item>
+			  
+				<ion-item>
+				  <ion-label fixed>Password</ion-label>
+				  <ion-input type="password"[(ngModel)]="password"></ion-input>
+				</ion-item>
+				<ion-item>
+						<ion-icon name="log-in" md="md-log-in"></ion-icon>
+						<button ion-button round  (click)="logIn()">Login</button>
+					</ion-item>
+					<ion-item>
+							<ion-icon name="person-add" md="md-person-add" item-left></ion-icon>
+							<button ion-button round color="secondary" (click)="signUp_page()">SignUp</button>
+						</ion-item>
+			  </ion-list>
+</ion-content>

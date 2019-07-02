@@ -1,0 +1,23 @@
+
+
+
+<ion-header>
+
+  
+    <ion-title>Home</ion-title>
+  
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let child of ChildList" (click)="onItemClick(child)">
+              <h2>Name: {{child.Name}}</h2>
+              <p>School:{{child.childSchool}}</p>
+        
+
+  </ion-item>
+  
+  <button ion-button round  (click)="logOut()">LogOut</button>
+  <button ion-button round  (click)="GoToAdd()">GoToAdd</button>
+  <button ion-button round  (click)="notify()">notification</button>
+</ion-content>

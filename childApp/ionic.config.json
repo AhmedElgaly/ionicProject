@@ -1,0 +1,7 @@
+{
+  "name": "childApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

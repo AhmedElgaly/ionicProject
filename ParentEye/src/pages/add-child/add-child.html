@@ -1,0 +1,94 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AddChild</ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>ChildName</ion-label>
+    <ion-input type="text" [(ngModel)]="childs.Name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Age</ion-label>
+    <ion-input type="number" [(ngModel)]="childs.Age"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button block outline icon-left (click)="getLocation()">
+          <ion-icon name="locate"></ion-icon>
+          Locate Me
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button block outline icon-left (click)="setLocation()">
+          <ion-icon name="map"></ion-icon>
+        SEtMyLocation
+        </button>
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <h2 *ngIf="!locationset">Choose Location</h2>
+        <agm-map *ngIf="locationset" [latitude]="baseLocation.latitude" [longitude]="baseLocation.longitude"
+  [zoom]="15"
+  >
+<agm-marker 
+*ngIf="locationset"
+[latitude]="baseLocation.latitude" [longitude]="baseLocation.longitude">
+
+</agm-marker>
+  </agm-map>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item>
+    <ion-label floating>School Name</ion-label>
+    <ion-input type="text" [(ngModel)]="childs.childSchool"></ion-input>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button block outline icon-left (click)="getSchoolLocation()">
+          <ion-icon name="locate"></ion-icon>
+          Locate Me
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button block outline icon-left (click)="setSchoolLocation()">
+          <ion-icon name="map"></ion-icon>
+        SetSchoolLocation
+        </button>
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <h2 *ngIf="!locationSchoolSet">Choose Location</h2>
+        <agm-map *ngIf="locationSchoolSet" [latitude]="baseSchoolLocation.latitude" [longitude]="baseSchoolLocation.longitude"
+  [zoom]="15"
+  >
+<agm-marker 
+*ngIf="locationSchoolSet"
+[latitude]="baseSchoolLocation.latitude" [longitude]="baseSchoolLocation.longitude">
+
+</agm-marker>
+  </agm-map>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<br>
+
+  <button ion-button color="secondary"(click)="AddChild()">Add</button>
+
+
+</ion-content>
